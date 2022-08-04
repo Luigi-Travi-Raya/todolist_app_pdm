@@ -1,10 +1,10 @@
-import { useEffect } from 'react';
+import { useLayoutEffect } from 'react';
 import { SafeAreaView, Text, View } from "react-native";
 import tailwind from "tailwind-rn";
 
 export default function CreateEdit({ navigation }) {
-  useEffect(() => {
-    navigation.setOptions({ title: "Create" || "Edit" })
+  useLayoutEffect(() => {
+    navigation.setOptions({ title: `${true ? "Create" : "Edit"} item` })
   }, [])
 
   return (
