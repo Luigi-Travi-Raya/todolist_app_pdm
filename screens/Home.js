@@ -1,4 +1,4 @@
-import { SafeAreaView, Text, View, Button, Pressable } from "react-native";
+import { SafeAreaView, Text, View, Button, Pressable, ImageBackground } from "react-native";
 import tailwind from "tailwind-rn";
 // import "../dist/output.css";
 
@@ -15,13 +15,13 @@ export default function Home({ navigation }) {
       </View>
 
       <View style={tailwind("bg-red-800 flex px-5 py-3 mt-5 ")}>
-        <View style={tailwind("flex mb-4")}>
+        <View style={tailwind("flex flex-row justify-between")}>
           <Text style={tailwind("w-full font-normal text-white text-lg")}>
             Nome Tarefa
           </Text>
           <View style={tailwind("flex")}>
             <Pressable style={tailwind("flex p-2 ml-4 mr-2 border-2 rounded  ")} onPress={() => navigation.navigate("CreateEdit")}>
-              <Text style={tailwind("self-center font-normal text-white text-lg")}> Editar </Text>
+              <ImageBackground source={{uri: 'https://reactjs.org/logo-og.png'}}  style={tailwind("self-center font-normal text-white text-sm")}/>
             </Pressable>
           </View>
         </View>
