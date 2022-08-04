@@ -1,16 +1,20 @@
-import { SafeAreaView, Text, View, Button } from "react-native";
+import { SafeAreaView, Text, View, Button, Pressable } from "react-native";
 import tailwind from "tailwind-rn";
 
 export default function Home({ navigation }) {
   return (
-    <SafeAreaView style={tailwind("flex-1 items-center justify-center")}>
-      <View style={tailwind("bg-blue-500 px-5 py-3 rounded-full")}>
-        <Text style={tailwind("text-white font-semibold text-lg")}>
-          Hello Tailwind 👋
-        </Text>
+    <SafeAreaView style={tailwind("flex-1 bg-gray-900 ")}>
+      <View style={tailwind("bg-indigo-800 px-5 py-3")}>
+        {/* <Button style={tailwind("bg-indigo-500")} title="Nova Tarefa" onPress={() => navigation.navigate("CreateEdit")} /> */}
+        <Pressable style={tailwind("block w-full text-sm")} onPress={() => navigation.navigate("CreateEdit")}>
+          <Text style={tailwind("text-white")}>
+              Nova Tarefa
+          </Text>
+        </Pressable>
       </View>
-      <View style={tailwind("bg-blue-400 px-5 py-3")}>
-        <Button title="Navegar" onPress={() => navigation.navigate("CreateEdit")} />
+
+      <View style={tailwind("bg-indigo-800 px-5 py-3")}>
+
       </View>
     </SafeAreaView>
   );

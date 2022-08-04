@@ -8,6 +8,7 @@ const Stack = createNativeStackNavigator();
 import Home from './screens/Home';
 import CreateEdit from './screens/CreateEdit';
 
+
 export default function App() {
   return (
     <NavigationContainer>
