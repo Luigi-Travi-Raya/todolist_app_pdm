@@ -8,12 +8,11 @@ export default function CreateEdit({ navigation }) {
   }, [])
 
   return (
-    <SafeAreaView style={tailwind("flex-1 items-center justify-center")}>
-      <View style={tailwind("bg-blue-500 px-5 py-3 rounded-full")}>
-        <Text style={tailwind("text-white font-semibold text-lg")}>
-          Hello Tailwind 👋
-        </Text>
+    <SafeAreaView style={tailwind("flex-1 py-8 px-3 bg-gray-900")} >
+      <View style={tailwind("flex justify-center")}>
+        <View style={tailwind("mb-3 w-96")}>
+        </View>
       </View>
-    </SafeAreaView>
+    </SafeAreaView >
   );
 }
