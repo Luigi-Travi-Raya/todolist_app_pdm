@@ -34,7 +34,7 @@ export default function CreateEdit({ navigation }) {
   }, [])
 
   return (
-    <SafeAreaView style={tailwind("flex-1 py-6 px-3 bg-gray-900")} >
+    <SafeAreaView style={tailwind("flex-1 py-6 px-4 bg-gray-900")} >
       <View style={tailwind("flex justify-center")}>
         <Label>Title</Label>
         <Input />
