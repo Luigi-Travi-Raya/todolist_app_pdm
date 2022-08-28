@@ -57,8 +57,6 @@ export default function Home({ navigation }) {
   const [items, setItems] = useState([]);
   const isFocused = useIsFocused();
 
-  console.log(items);
-
   useEffect(() => {
     setTimeout(_ => searchItems(setItems), 100)
   }, [isFocused])

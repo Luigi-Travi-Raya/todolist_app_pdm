@@ -36,7 +36,6 @@ const handleErrors = errors => {
 }
 
 const save = async (key, item) => {
-  console.log(Number(key), item);
   const keys = !key && await AsyncStorage.getAllKeys();
   const index = (Number(key) || (Number(keys.pop() || 0) + 1)).toString();
   return AsyncStorage.setItem(index, JSON.stringify(item));
