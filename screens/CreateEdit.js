@@ -1,5 +1,6 @@
 import { useLayoutEffect, useState, useEffect } from 'react';
-import { SafeAreaView, Text, View, TextInput, Pressable, SafeAreaViewBase } from "react-native";
+import { SafeAreaView, Text, View, TextInput, Pressable, SafeAreaViewBase, Alert} from "react-native";
+import RNPickerSelect from 'react-native-picker-select';
 import tailwind from "tailwind-rn";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -33,6 +34,8 @@ const Input = ({ multiline = false, lines, values }) => {
 
 const handleErrors = errors => {
   // add error messages showing somewhere
+  alert("Preencha todos os campos");
+  console.log(errors)
 }
 
 const save = async (key, item) => {
@@ -85,7 +88,18 @@ export default function CreateEdit({ navigation, route }) {
         <Label>Deadline</Label>
         <Input values={[deadline, setDeadline]} />
         <Label>Priority</Label>
-        <Input values={[priority, setPriority]} />
+        {/* <Input values={[priority, setPriority]} /> */}
+        <RNPickerSelect
+            onValueChange={(value) => setPriority(value)}
+            items={[
+                { label: 'High', value: 'high' },
+                { label: 'Medium', value: 'medium' },
+                { label: 'Low', value: 'low' },
+            ]}
+            placeholder = {{
+              label: "Select a priority"
+            }}
+        />
         <Pressable style={tailwind("border-2 border-white py-4 rounded-lg w-full bg-indigo-700 mt-6")} onPress={() => handleSubmit(key, { title, description, deadline, priority }, navigation)}>
           <Text style={tailwind("self-center font-normal text-white text-lg")}>
             {route.params.pageAction + ' item'}
